@@ -48,33 +48,33 @@ function transform_value(value, begin_unit, end_unit)
     }
 }
 
-function update(model, choose_left, value, left_unit, right_unit)
+function update(model, choose_left, value, begin_unit, end_unit)
 {
     if(choose_left == true)
     {
-        const transformed_value = transform_value(value, left_unit, right_unit);
+        const transformed_value = transform_value(value, begin_unit, end_unit);
         return{
             ...model,
             choose_left: choose_left,
             left_value: value,
-            left_unit: left_unit,
+            left_unit: begin_unit,
             right_value: transformed_value,
-            right_unit: right_unit
+            right_unit: end_unit
         }
     }
     else
     {
-        const transformed_value = transform_value(value, right_unit, left_unit);
+        const transformed_value = transform_value(value, begin_unit, end_unit);
         return{
             ...model,
             choose_left: choose_left,
             left_value: transformed_value,
-            left_unit: left_unit,
+            left_unit: end_unit,
             right_value: value,
-            right_unit: right_unit
+            right_unit: begin_unit
         }
     }
-}
+};
 
 // Exportation
 module.exports = {
