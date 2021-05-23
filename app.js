@@ -19,14 +19,17 @@ async function app(state, visual, update){
         printTable(table)
         
         const {choose_left} = await input_is_left(model);
-        console.log(choose_left);
         const value = await input_value(model);
-        console.log(value);
         const begin_unit = await input_begin_unit(model);
-        console.log(begin_unit);
         const end_unit = await input_end_unit(model);
-        console.log(end_unit);
         const updated_model = update(model, choose_left, value, begin_unit, end_unit);
+        /*
+        console.log(updated_model.choose_left);
+        console.log(updated_model.left_value);
+        console.log(updated_model.left_unit);
+        console.log(updated_model.right_value);
+        console.log(updated_model.right_unit);
+        */
         state = {
             ...state,
             model: updated_model,

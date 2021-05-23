@@ -4,7 +4,7 @@ init_model = {
     left_value: 0,
     left_unit: 'o',
     right_value: 0,
-    right_unit: 'o'
+    right_unit: 'o',
 };
 
 // Exportation
