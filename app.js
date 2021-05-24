@@ -14,7 +14,7 @@ async function app(state, visual, update){
         const {model, view_model} = state;
         const {title, table} = view_model;
 
-        //console.clear();
+        console.clear();
         console.log(title)
         printTable(table)
         
@@ -23,13 +23,7 @@ async function app(state, visual, update){
         const begin_unit = await input_begin_unit(model);
         const end_unit = await input_end_unit(model);
         const updated_model = update(model, choose_left, value, begin_unit, end_unit);
-        /*
-        console.log(updated_model.choose_left);
-        console.log(updated_model.left_value);
-        console.log(updated_model.left_unit);
-        console.log(updated_model.right_value);
-        console.log(updated_model.right_unit);
-        */
+
         state = {
             ...state,
             model: updated_model,
